@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ingenium UANL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- LIBS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Space Grotesk', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* FONDO ANIMADO */
+    .bg {
+      animation: slide 6s ease-in-out infinite alternate;
+      background-image: linear-gradient(-60deg, #6d28d9 50%, #2563eb 50%);
+      bottom: 0;
+      left: -50%;
+      opacity: 0.35;
+      position: fixed;
+      right: -50%;
+      top: 0;
+      z-index: -3;
+    }
+    .bg2 { animation-duration: 8s; animation-direction: alternate-reverse; }
+    .bg3 { animation-duration: 10s; }
+
+    @keyframes slide {
+      0% { transform: translateX(-25%); }
+      100% { transform: translateX(25); }
+    }
+
+    /* HERO CARRUSEL */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(2px);
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .hero-bg img.active { opacity: 0.75; }
+
+    /* BOTONES */
+    .btn-animated {
+      background: linear-gradient(-60deg, #7c7cff, #4f46e5, #06b6d4);
+      background-size: 300% 300%;
+      animation: gradientMove 5s ease infinite alternate;
+      color: white;
+      padding: 14px 36px;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .btn-animated:hover {
+      transform: scale(1.06);
+      box-shadow: 0 15px 40px rgba(0,0,0,.45);
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+  </style>
+</head>
+
+<body class="text-white overflow-x-hidden bg-[#0E1325]">
+
+<!-- FONDOS -->
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<!-- NAV -->
+<header class="fixed w-full z-50 bg-[#0E1325]/60 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo_ingenium.png" class="h-10">
+      <span class="text-lg font-semibold tracking-wide">
+        Ingenium
+      </span>
+    </div>
+    
+
+    <nav class="hidden md:flex gap-6 items-center text-sm">
+      <a href="#inicio">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#what">Qué hacemos</a>
+      <a href="#unete" class="btn-animated">Únete</a>
+      
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center text-center px-6 pt-32">
+
+  <div class="hero-bg">
+    <img src="assets/img/foto1.jpg" class="active">
+    <img src="assets/img/foto2.jpg">
+    <img src="assets/img/foto3.jpg">
+    <img src="assets/img/foto4.jpg">
+    <img src="assets/img/foto5.jpg">
+    <img src="assets/img/foto6.jpg">
+    <img src="assets/img/foto7.jpg">
+    <img src="assets/img/foto8.jpg">
+  
+  </div>
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0E1325]/40 to-[#0E1325]/80"></div>
+
+  <div class="relative z-10 max-w-3xl" data-aos="fade-up">
+    
+
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      Donde las ideas cobran vida
+    </h1>
+
+    <p class="text-gray-200 mb-10">
+      Jóvenes innovadores haciendo que suceda, esto es ingenium. 
+    </p>
+
+    <a href="#unete" class="btn-animated text-lg">
+      Únete al club
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-28 px-8 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">¿Quiénes somos?</h2>
+  <p class="text-gray-300 max-w-4xl">
+    Ingenium nace como un espacio transformador donde estudiantes con talento, visiòn y compromiso colaboran 
+    con empresas lideres para resolver retos tecnologicos y de sostenibilidad que impulsan la 
+    innovación mèxicana.
+  </p>
+</section>
+
+<!-- WHAT -->
+<section id="what" class="py-28 px-8 bg-[#11183A]/70">
+  <h2 class="text-3xl font-bold text-center mb-6">¿Qué hacemos?</h2>
+
+  <p class="text-gray-300 max-w-3xl mx-auto text-center mb-14">
+    Impulsamos la innovación a través del trabajo colaborativo,                              
+    la tecnología y la conexión con el entorno empresarial.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- SOLUCIONES -->
+    <div class="border border-white/10 rounded-xl p-8 backdrop-blur">
+      <h3 class="text-xl font-semibold mb-3">
+        Soluciones innovadoras
+      </h3>
+      <p class="text-gray-300">
+        Desarrollamos soluciones para retos empresariales reales,
+        integrando talento multidisciplinario y pensamiento creativo.
+      </p>
+    </div>
+
+    <!-- TALLERES -->
+    <div class="border border-white/10 rounded-xl p-8 backdrop-blur">
+      <h3 class="text-xl font-semibold mb-3">
+        Talleres prácticos
+      </h3>
+      <p class="text-gray-300">
+        Facilitamos talleres donde el aprendizaje se da
+        construyendo, probando y mejorando ideas.
+      </p>
+    </div>
+
+    <!-- CONFERENCIAS -->
+    <div class="border border-white/10 rounded-xl p-8 backdrop-blur">
+      <h3 class="text-xl font-semibold mb-3">
+        Charlas y conferencias
+      </h3>
+      <p class="text-gray-300">
+        Acercamos a la comunidad a profesionales de la industria
+        que comparten experiencia, visión y futuro.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="unete" class="py-28 px-8 relative overflow-hidden" data-aos="fade-up">
+  <div class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- IZQUIERDA: INSTAGRAM -->
+    <div class="flex justify-center">
+      <blockquote
+        class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DSf8QMxjyFK/"
+        data-instgrm-version="14"
+        data-instgrm-captioned
+        style="max-width:420px; width:100%; border-radius:16px; overflow:hidden;">
+      </blockquote>
+    </div>
+
+    <!-- DERECHA: CTA -->
+    <div class="text-center md:text-left">
+
+      <!-- UNETE -->
+      <h2 class="text-4xl font-bold mb-6">
+        ¿Listo para crear e impulsar tu carrera profesional?
+      </h2>
+
+      <p class="text-gray-300 mb-8 max-w-md">
+        Buscamos personas con iniciativa, curiosidad y ganas de construir.
+        No importa tu carrera: importa tu actitud.
+      </p>
+
+      <a
+        href="https://forms.gle/BiVU63cz4KCcFGjaA"
+        target="_blank"
+        class="btn-animated inline-block mb-14"
+      >
+        Quiero unirme
+      </a>
+
+      <!-- SUSCRIBETE -->
+      
+
+      <p class="text-lg font-semibold mb-6 text-gray-200">
+        Recibe actualizaciones de Ingenium 
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
+        <input
+          type="email"
+          placeholder="Correo electrónico *"
+          required
+          class="px-5 py-3 rounded-md text-gray-800 w-full focus:outline-none"
+        >
+
+        <button
+          type="submit"
+          class="bg-[#5B21B6] hover:bg-[#4C1D95] transition text-white font-semibold px-6 py-3 rounded-md"
+        >
+          SUSCRIBIRSE
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- COLABORACIÓN -->
+<section class="py-32 px-8 bg-gradient-to-br from-[#1B1F4A] to-[#0E1325] text-center">
+  <h2 class="text-4xl font-bold mb-6">
+    Colabora con <span class="text-indigo-300">Ingenium</span>
+  </h2>
+
+  <p class="text-gray-300 max-w-3xl mx-auto mb-10 text-lg">
+    Buscamos empresas y aliados que quieran impulsar talento joven,
+    innovación y proyectos con impacto real.
+  </p>
+
+  <a
+  href="mailto:ingenium.uanl@gmail.com?subject=INTERÉS%20COLABORACIÓN%20INGENIUM&body=Hola%20Ingenium,%0A%0AMe%20interesa%20colaborar%20con%20ustedes.%0A%0ANombre:%0AEmpresa:%0AContacto:"
+  class="btn-animated inline-block"
+>
+  Contactar
+</a>
+
+</section>
+
+<footer class="py-10 text-center text-gray-400 border-t border-white/10">
+  © 2025 Ingenium UANL
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
+
+<script>
+  AOS.init({ duration: 900, once: true });
+
+  const images = document.querySelectorAll('.hero-bg img');
+  let index = 0;
+  setInterval(() => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }, 4500);
+</script>
+
+</body>
+</html>
+
+
